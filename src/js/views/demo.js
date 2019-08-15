@@ -10,16 +10,20 @@ export class Demo extends React.Component {
 		return (
 			<div className="container">
 				<ul className="list-group">
+					<h1>adsfasdf</h1>
 					<Context.Consumer>
 						{({ store, actions }) => {
-							return store.demo.map((item, index) => {
+							return store.purchases.map((item, index) => {
 								return (
 									<li
 										key={index}
 										className="list-group-item d-flex justify-content-between"
 										style={{ background: item.background }}>
 										<Link to={"/single/" + index}>
-											<span>Link to: {item.title}</span>
+											<p>Link to: {item.title} </p>
+											<p>SKU #: {item.sku} </p>
+											<p>Description #: {item.description} </p>
+											<p>QTY #: {item.quantity} </p>
 										</Link>
 										<p style={{ color: item.initial }}>
 											{"Check store/store.js scroll to the actions to see the code "}

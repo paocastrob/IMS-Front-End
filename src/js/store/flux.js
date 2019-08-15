@@ -1,16 +1,24 @@
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
-			demo: [
+			purchases: [
 				{
-					title: "FIRST",
-					background: "white",
-					initial: "white"
+					title: "Item 1",
+					sku: 101,
+					description: "this product is amazing",
+					quantity: 100000000000
 				},
 				{
-					title: "SECOND",
-					background: "white",
-					initial: "white"
+					title: "Item 2",
+					sku: 103,
+					description: "wow this is panda",
+					quantity: 4886
+				},
+				{
+					title: "Item 3",
+					sku: 107,
+					description: "wow almost leaving",
+					quantity: 4889
 				}
 			]
 		},

@@ -22,6 +22,7 @@ export class Home extends React.Component {
 								<th scope="col">Quantity</th>
 								<th scope="col">Date</th>
 								<th scope="col">Order Number</th>
+								<th scope="col">{/*space for x's*/}</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -32,24 +33,9 @@ export class Home extends React.Component {
 								<td>@mdo</td>
 								<td>@mdo</td>
 								<td>@mdo</td>
-								<i className="far fa-times-circle fa-2x pt-2 pl-1 text-danger" />
-							</tr>
-
-							<tr>
-								<th scope="row">2</th>
-								<td>Jacob</td>
-								<td>Thornton</td>
-								<td>@fat</td>
-								<td>@fat</td>
-								<td>@fat</td>
-							</tr>
-							<tr>
-								<td>@twitter</td>
-								<td>@twitter</td>
-								<td>@twitter</td>
-								<td>@twitter</td>
-								<td>@twitter</td>
-								<td>@twitter</td>
+								<td>
+									<i className="far fa-times-circle fa-2x pt-2 pl-1 text-danger" />
+								</td>
 							</tr>
 						</tbody>
 					</table>
