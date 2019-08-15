@@ -65,9 +65,6 @@ export class Navbar extends React.Component {
 							placeholder="Search"
 							aria-label="Search"
 						/>
-						<button className="btn btn-outline-success my-2 my-sm-0" type="submit">
-							Search
-						</button>
 					</form>
 				</div>
 			</nav>
