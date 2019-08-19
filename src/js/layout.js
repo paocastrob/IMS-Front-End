@@ -5,6 +5,8 @@ import ScrollToTop from "./component/scrollToTop";
 import { Home } from "./views/home";
 import { Purchases } from "./views/purchases";
 import { Sales } from "./views/sales";
+import { Inventory } from "./views/inventory";
+import { Delivery } from "./views/delivery";
 import { Single } from "./views/single";
 import injectContext from "./store/appContext";
 
@@ -27,6 +29,8 @@ export class Layout extends React.Component {
 							<Route exact path="/" component={Home} />
 							<Route path="/purchases" component={Purchases} />
 							<Route path="/sales" component={Sales} />
+							<Route path="/inventory" component={Inventory} />
+							<Route path="/delivery" component={Delivery} />
 							<Route path="/single/:theid" component={Single} />
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>

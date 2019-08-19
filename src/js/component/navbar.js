@@ -18,18 +18,30 @@ export class Navbar extends React.Component {
 				</button>
 				<div className="collapse navbar-collapse" id="navbarSupportedContent">
 					<ul className="navbar-nav mr-auto">
-						<li className="nav-item active">
-							<a className="nav-link" href="#">
-								<i className="fas fa-home" /> Home <span className="sr-only">(current)</span>
-							</a>
-						</li>
+						<Link to="/">
+							<li className="nav-item active">
+								<a
+									className="nav-link"
+									href="#"
+									role="button"
+									aria-haspopup="true"
+									aria-expanded="false">
+									<i className="fas fa-home" /> Home
+								</a>
+							</li>
+						</Link>
 
 						<Link to="/sales">
-							<a className="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-								<li className="nav-item active">
+							<li className="nav-item active">
+								<a
+									className="nav-link"
+									href="#"
+									role="button"
+									aria-haspopup="true"
+									aria-expanded="false">
 									<i className="fas fa-piggy-bank" /> Sales
-								</li>
-							</a>
+								</a>
+							</li>
 						</Link>
 
 						<Link to="/purchases">
@@ -41,6 +53,31 @@ export class Navbar extends React.Component {
 									aria-haspopup="true"
 									aria-expanded="false">
 									<i className="fas fa-file-invoice-dollar" /> Purchases
+								</a>
+							</li>
+						</Link>
+						<Link to="/inventory">
+							<li className="nav-item active">
+								<a
+									className="nav-link"
+									href="#"
+									role="button"
+									aria-haspopup="true"
+									aria-expanded="false">
+									<i className="fas fa-box-open" /> Inventory
+								</a>
+							</li>
+						</Link>
+
+						<Link to="/delivery">
+							<li className="nav-item active">
+								<a
+									className="nav-link"
+									href="#"
+									role="button"
+									aria-haspopup="true"
+									aria-expanded="false">
+									<i className="fas fa-truck" /> Delivery
 								</a>
 							</li>
 						</Link>
@@ -57,17 +94,6 @@ export class Navbar extends React.Component {
 								Something else here
 							</a>
 						</div>
-
-						<li className="nav-item">
-							<a className="nav-link active" href="#" tabIndex="-1" aria-disabled="true">
-								<i className="fas fa-box-open" /> Inventory
-							</a>
-						</li>
-						<li className="nav-item active">
-							<a className="nav-link" href="#">
-								<i className="fas fa-truck" /> Delivery
-							</a>
-						</li>
 					</ul>
 					<form className="form-inline my-2 my-lg-0">
 						<input

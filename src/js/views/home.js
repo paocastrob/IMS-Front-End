@@ -8,7 +8,7 @@ export class Home extends React.Component {
 			<div className="row">
 				<div className="col-6 mx-auto">
 					<div className="text-center mt-5">
-						<h1>Purchases</h1>
+						<h1>Homepage</h1>
 					</div>
 					<div>
 						<p> August 15, 2019 </p> <p>0123456789 (order number)</p>
