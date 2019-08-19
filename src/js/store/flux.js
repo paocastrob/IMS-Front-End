@@ -1,6 +1,7 @@
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
+			products: [],
 			purchases: [
 				{
 					title: "Item 1",

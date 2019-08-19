@@ -1,54 +1,40 @@
 import React from "react";
-import { Link } from "react-router-dom";
-
+import rigoImage from "../../img/rigo-baby.jpg";
+import "../../styles/home.scss";
 import { Context } from "../store/appContext";
-
-import "../../styles/demo.scss";
-
 export class Inventory extends React.Component {
 	render() {
 		return (
-			<div className="row">
-				<div className="col-6 mx-auto">
-					<div className="text-center mt-5">
-						<h1>Inventory</h1>
-					</div>
-					<div>
-						<p> August 15, 2019 </p> <p>0123456789 (order number)</p>
-					</div>
+			<div className="text-center mt-5">
+				<div className="col-4 offset-4">
 					<table className="table table-bordered">
 						<thead>
-							<tr>
-								<th scope="col">ID Number</th>
-								<th scope="col">SKU</th>
-								<th scope="col">Description</th>
-								<th scope="col">Quantity</th>
-								<th scope="col">Date</th>
-								<th scope="col">Order Number</th>
-								<th scope="col">{/*space for x's*/}</th>
-							</tr>
-						</thead>
-						<tbody>
 							<Context.Consumer>
 								{({ store, actions }) => {
-									return store.sales.map((item, index) => {
-										return (
-											<tr key={index}>
-												<th scope="row">{index + 1}</th>
-												<td>{item.title}</td>
-												<td>{item.sku}</td>
-												<td>{item.description}</td>
-												<td>@mdo</td>
-												<td>@mdo</td>
-												<td>
-													<i className="far fa-times-circle fa-2x pt-2 pl-1 text-danger" />
-												</td>
-											</tr>
-										);
-									});
+									return (
+										store.products[0] &&
+										Object.keys(store.products[0]).map(key => {
+											return <td key={key}>{key}</td>;
+										})
+									);
 								}}
 							</Context.Consumer>
-						</tbody>
+						</thead>
+						​
+						<Context.Consumer>
+							{({ store, actions }) => {
+								return store.products.map((item, index) => {
+									return (
+										<tr key={index}>
+											<td>{item.description}</td>
+											<td>{item.id}</td>
+											<td>{item.item}</td>
+											<td>{item.qty}</td>
+										</tr>
+									);
+								});
+							}}
+						</Context.Consumer>
 					</table>
 				</div>
 			</div>
