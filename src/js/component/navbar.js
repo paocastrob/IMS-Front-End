@@ -23,30 +23,41 @@ export class Navbar extends React.Component {
 								<i className="fas fa-home" /> Home <span className="sr-only">(current)</span>
 							</a>
 						</li>
-						<li className="nav-item active">
-							<a className="nav-link" href="#">
-								<i className="fas fa-piggy-bank" /> Sales
-							</a>
-						</li>
 
-						<li className="nav-item active">
+						<Link to="/sales">
 							<a className="nav-link" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-								<i className="fas fa-file-invoice-dollar" /> Purchases
+								<li className="nav-item active">
+									<i className="fas fa-piggy-bank" /> Sales
+								</li>
 							</a>
+						</Link>
 
-							<div className="dropdown-menu" aria-labelledby="navbarDropdown">
-								<a className="dropdown-item" href="#">
-									Action Inventory
+						<Link to="/purchases">
+							<li className="nav-item active">
+								<a
+									className="nav-link"
+									href="#"
+									role="button"
+									aria-haspopup="true"
+									aria-expanded="false">
+									<i className="fas fa-file-invoice-dollar" /> Purchases
 								</a>
-								<a className="dropdown-item" href="#">
-									Another action
-								</a>
-								<div className="dropdown-divider" />
-								<a className="dropdown-item" href="#">
-									Something else here
-								</a>
-							</div>
-						</li>
+							</li>
+						</Link>
+
+						<div className="dropdown-menu" aria-labelledby="navbarDropdown">
+							<a className="dropdown-item" href="#">
+								Action Inventory
+							</a>
+							<a className="dropdown-item" href="#">
+								Another action
+							</a>
+							<div className="dropdown-divider" />
+							<a className="dropdown-item" href="#">
+								Something else here
+							</a>
+						</div>
+
 						<li className="nav-item">
 							<a className="nav-link active" href="#" tabIndex="-1" aria-disabled="true">
 								<i className="fas fa-box-open" /> Inventory
