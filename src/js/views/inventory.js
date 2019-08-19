@@ -7,6 +7,9 @@ export class Inventory extends React.Component {
 		return (
 			<div className="text-center mt-5">
 				<div className="col-4 offset-4">
+					<div className="text-center mt-5">
+						<h1>Homepage</h1>
+					</div>
 					<table className="table table-bordered">
 						<thead>
 							<Context.Consumer>
@@ -14,13 +17,16 @@ export class Inventory extends React.Component {
 									return (
 										store.products[0] &&
 										Object.keys(store.products[0]).map(key => {
-											return <td key={key}>{key}</td>;
+											return (
+												<td key={key} style={{ fontWeight: "bold" }}>
+													{key}
+												</td>
+											);
 										})
 									);
 								}}
 							</Context.Consumer>
 						</thead>
-						​
 						<Context.Consumer>
 							{({ store, actions }) => {
 								return store.products.map((item, index) => {
