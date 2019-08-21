@@ -14,7 +14,9 @@ export class Purchases extends React.Component {
 						<h1>Purchases</h1>
 					</div>
 					<div>
-						<p> August 15, 2019 </p> <p>0123456789 (order number)</p>
+						<p> August 15, 2019 </p>
+						<p>Enter order number:</p>
+						<input className="mb-3 border" onChange={this.myChangeHandler} />
 					</div>
 					<table className="table table-bordered">
 						<thead>
