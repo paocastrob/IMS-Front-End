@@ -25,6 +25,7 @@ export class Purchases extends React.Component {
 									<p> August 15, 2019 </p>
 									<p>Enter order number:</p>
 									<input
+										placeholder="Scan Barcode..."
 										className="mb-3 border"
 										onChange={e => this.setState({ scan: e.target.value })}
 									/>
@@ -33,6 +34,11 @@ export class Purchases extends React.Component {
 										className="btn btn-info">
 										Add
 									</button>
+									<input
+										placeholder="Enter Quantity..."
+										className="mb-3 border"
+										onChange={e => this.setState({ qty: e.target.value })}
+									/>
 								</div>
 							);
 						}}

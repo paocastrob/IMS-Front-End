@@ -58,6 +58,22 @@ const getState = ({ getStore, setStore }) => {
 					})
 				});
 			},
+
+			scanNewQty: qty => {
+				let store = getStore();
+				let num = store.purchases.length;
+
+				console.log("qty: " + num);
+				setStore({
+					purchases: store.purchases.concat({
+						title: `Item ${num + 1}`,
+						sku: qty,
+						description: "wow almost leaving",
+						quantity: 4889
+					})
+				});
+			},
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
