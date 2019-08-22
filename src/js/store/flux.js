@@ -44,6 +44,20 @@ const getState = ({ getStore, setStore }) => {
 			]
 		},
 		actions: {
+			scanNewCode: scan => {
+				let store = getStore();
+				let num = store.purchases.length;
+
+				console.log("scan: " + num);
+				setStore({
+					purchases: store.purchases.concat({
+						title: `Item ${num + 1}`,
+						sku: scan,
+						description: "wow almost leaving",
+						quantity: 4889
+					})
+				});
+			},
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();

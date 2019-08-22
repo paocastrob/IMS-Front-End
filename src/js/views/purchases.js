@@ -6,6 +6,11 @@ import { Context } from "../store/appContext";
 import "../../styles/demo.scss";
 
 export class Purchases extends React.Component {
+	constructor(props) {
+		super(props);
+		// Don't do this!
+		this.state = { scan: "" };
+	}
 	render() {
 		return (
 			<div className="row">
@@ -13,11 +18,25 @@ export class Purchases extends React.Component {
 					<div className="text-center mt-5">
 						<h1>Purchases</h1>
 					</div>
-					<div>
-						<p> August 15, 2019 </p>
-						<p>Enter order number:</p>
-						<input className="mb-3 border" onChange={this.myChangeHandler} />
-					</div>
+					<Context.Consumer>
+						{({ store, actions }) => {
+							return (
+								<div>
+									<p> August 15, 2019 </p>
+									<p>Enter order number:</p>
+									<input
+										className="mb-3 border"
+										onChange={e => this.setState({ scan: e.target.value })}
+									/>
+									<button
+										onClick={() => actions.scanNewCode(this.state.scan)}
+										className="btn btn-info">
+										Add
+									</button>
+								</div>
+							);
+						}}
+					</Context.Consumer>
 					<table className="table table-bordered">
 						<thead>
 							<tr>
