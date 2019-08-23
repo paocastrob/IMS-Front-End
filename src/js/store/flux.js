@@ -91,6 +91,9 @@ const getState = ({ getStore, setStore }) => {
 			scanNewCode: scan => {
 				let store = getStore();
 				let num = store.purchases.length;
+				let input1 = document.querySelector("#input1");
+				console.log(input1);
+				input1.value = "";
 
 				console.log("scan: " + num);
 				setStore({

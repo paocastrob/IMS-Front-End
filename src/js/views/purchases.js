@@ -9,7 +9,9 @@ export class Purchases extends React.Component {
 	constructor(props) {
 		super(props);
 		// Don't do this!
-		this.state = { scan: "" };
+		this.state = {
+			scan: ""
+		};
 	}
 	render() {
 		return (
@@ -38,6 +40,7 @@ export class Purchases extends React.Component {
 									<div className="row">
 										<div className="col-3">
 											<input
+												id="input1"
 												placeholder="Scan Barcode..."
 												className="mb-2 border w-100"
 												onChange={e => this.setState({ scan: e.target.value })}
