@@ -58,6 +58,21 @@ const getState = ({ getStore, setStore }) => {
 					})
 				});
 			},
+			login: (tiger, lion) => {
+				fetch("https://3000-c88f1bcd-c8c2-41af-9d5e-4e8119812ef1.ws-us0.gitpod.io/login", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify({
+						username: tiger,
+						password: lion
+					})
+				})
+					.then(resp => resp.json())
+					.then(dolphin => console.log(token));
+			},
+
 			changeColor: (index, color) => {
 				//get the store
 				const store = getStore();
