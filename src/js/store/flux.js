@@ -70,7 +70,22 @@ const getState = ({ getStore, setStore }) => {
 					})
 				})
 					.then(resp => resp.json())
-					.then(dolphin => console.log(token));
+					.then(dolphin => console.log(token))
+            },
+
+			scanNewQty: qty => {
+				let store = getStore();
+				let num = store.purchases.length;
+
+				console.log("qty: " + num);
+				setStore({
+					purchases: store.purchases.concat({
+						title: `Item ${num + 1}`,
+						sku: qty,
+						description: "wow almost leaving",
+						quantity: 4889
+					})
+				});
 			},
 
 			changeColor: (index, color) => {
