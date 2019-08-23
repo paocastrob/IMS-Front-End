@@ -10,7 +10,7 @@
   padding: 5px 5px;
   margin: 5px 0;
   box-sizing: border-box;
-  border: 4px solid black !important;
+  border: 1px solid black !important;
   border-radius: 4px;
 }
 
@@ -22,8 +22,16 @@
   padding: 5px 5px;
   margin: 5px 0;
   box-sizing: border-box;
-  border: 4px solid black !important;
+  border:1px solid black !important;
   border-radius: 4px;
+}
+  .font {
+    font-family: monospace;
+  }
+
+h1 {
+ font-family: 'Six Caps';
+ font-size: 90px;
 }
 
 // @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
@@ -260,16 +268,7 @@
 .container .info span .fa {
   color: #EF3B3A;
 }
-body {
-  background: #70c740; /* fallback for old browsers */
-  background: -webkit-linear-gradient(right, #76b852, rgb(55, 143, 135));
-  background: -moz-linear-gradient(right, #76b852, rgb(55, 143, 135));
-  background: -o-linear-gradient(right, #76b852, rgb(55, 143, 135));
-  background: linear-gradient(to left, #58eb09, rgb(55, 143, 135));
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+
 
 p, h1, h2 {
     font-family: 'Six Caps', sans-serif;
