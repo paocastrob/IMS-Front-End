@@ -18,52 +18,7 @@ export class Saleslist extends React.Component {
 					<div className="text-center font">
 						<h1>Sales List</h1>
 					</div>
-					<Context.Consumer>
-						{({ store, actions }) => {
-							return (
-								<React.Fragment>
-									<div className="row">
-										<div className="col-3">August 15, 2019</div>
-									</div>
 
-									<div className="row">
-										<div className="col-3">
-											<input
-												placeholder="Enter order number:"
-												className="mb-2 border w-100"
-												onChange={e => this.setState({ scan: e.target.value })}
-											/>
-										</div>
-									</div>
-									<div className="row">
-										<div className="col-3">
-											<input
-												placeholder="Scan Barcode..."
-												className="mb-2 border w-100"
-												onChange={e => this.setState({ scan: e.target.value })}
-											/>
-										</div>
-									</div>
-									<div className="row">
-										<div className="col-3">
-											<input
-												placeholder="Enter Quantity..."
-												className="mb-3 border w-100"
-												onChange={e => this.setState({ qty: e.target.value })}
-											/>
-										</div>
-										<div className="col-4 ">
-											<button
-												onClick={() => actions.scanNewCode(this.state.scan)}
-												className="btn btn-info m-1">
-												Add
-											</button>
-										</div>
-									</div>
-								</React.Fragment>
-							);
-						}}
-					</Context.Consumer>
 					<table className="table table-bordered tableborder">
 						<thead>
 							<tr>
