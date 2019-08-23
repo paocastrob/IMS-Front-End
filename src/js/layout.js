@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
-import { Home } from "./views/home";
+import { Login } from "./component/login";
 import { Purchases } from "./views/purchases";
 import { Sales } from "./views/sales";
 import { Inventory } from "./views/inventory";
@@ -26,7 +26,7 @@ export class Layout extends React.Component {
 					<ScrollToTop>
 						<Navbar />
 						<Switch>
-							<Route exact path="/" component={Home} />
+							<Route exact path="/" component={Login} />
 							<Route path="/purchases" component={Purchases} />
 							<Route path="/sales" component={Sales} />
 							<Route path="/inventory" component={Inventory} />
