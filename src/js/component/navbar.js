@@ -82,6 +82,19 @@ export class Navbar extends React.Component {
 							</li>
 						</Link>
 
+						<Link to="/neworder">
+							<li className="nav-item active">
+								<a
+									className="nav-link"
+									href="#"
+									role="button"
+									aria-haspopup="true"
+									aria-expanded="false">
+									<i className="fas fa-folder-open" /> Sales List
+								</a>
+							</li>
+						</Link>
+
 						<div className="dropdown-menu" aria-labelledby="navbarDropdown">
 							<a className="dropdown-item" href="#">
 								Action Inventory

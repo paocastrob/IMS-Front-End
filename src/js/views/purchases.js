@@ -14,36 +14,57 @@ export class Purchases extends React.Component {
 	render() {
 		return (
 			<div className="row">
-				<div className="col-6 mx-auto">
-					<div className="text-center mt-5">
+				<div className="col-10 mx-auto">
+					<div className="text-center font">
 						<h1>Purchases</h1>
 					</div>
 					<Context.Consumer>
 						{({ store, actions }) => {
 							return (
-								<div>
-									<p> August 15, 2019 </p>
-									<p>Enter order number:</p>
-									<input
-										placeholder="Scan Barcode..."
-										className="mb-3 border"
-										onChange={e => this.setState({ scan: e.target.value })}
-									/>
-									<button
-										onClick={() => actions.scanNewCode(this.state.scan)}
-										className="btn btn-info">
-										Add
-									</button>
-									<input
-										placeholder="Enter Quantity..."
-										className="mb-3 border"
-										onChange={e => this.setState({ qty: e.target.value })}
-									/>
-								</div>
+								<React.Fragment>
+									<div className="row">
+										<div className="col-3">August 15, 2019</div>
+									</div>
+
+									<div className="row">
+										<div className="col-3">
+											<input
+												placeholder="Enter order number:"
+												className="mb-2 border w-100"
+												onChange={e => this.setState({ scan: e.target.value })}
+											/>
+										</div>
+									</div>
+									<div className="row">
+										<div className="col-3">
+											<input
+												placeholder="Scan Barcode..."
+												className="mb-2 border w-100"
+												onChange={e => this.setState({ scan: e.target.value })}
+											/>
+										</div>
+									</div>
+									<div className="row">
+										<div className="col-3">
+											<input
+												placeholder="Enter Quantity..."
+												className="mb-3 border w-100"
+												onChange={e => this.setState({ qty: e.target.value })}
+											/>
+										</div>
+										<div className="col-4 ">
+											<button
+												onClick={() => actions.scanNewCode(this.state.scan)}
+												className="btn btn-info m-1">
+												Add
+											</button>
+										</div>
+									</div>
+								</React.Fragment>
 							);
 						}}
 					</Context.Consumer>
-					<table className="table table-bordered">
+					<table className="table table-bordered tableborder">
 						<thead>
 							<tr>
 								<th scope="col">ID Number</th>

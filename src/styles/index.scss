@@ -7,16 +7,33 @@
 }
 .border {
   width: 50%;
-  padding: 12px 20px;
-  margin: 8px 0;
+  padding: 5px 5px;
+  margin: 5px 0;
   box-sizing: border-box;
-  border: 6px solid black !important;
+  border: 1px solid black !important;
   border-radius: 4px;
 }
 
 .white-text {
     color: white;
 }
+.tableborder {
+  width: 100%;
+  padding: 5px 5px;
+  margin: 5px 0;
+  box-sizing: border-box;
+  border:1px solid black !important;
+  border-radius: 4px;
+}
+  .font {
+    font-family: monospace;
+  }
+
+h1 {
+ font-family: 'Six Caps';
+ font-size: 90px;
+}
+
 // @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
 // body{
 //     background:url("https://b8d4c2f2-e45a-4e3d-ae54-c22d19666c88.ws-us0.gitpod.io/mini-browser/workspace/IMS-Front-End/src/img/bg-orange.png")
@@ -193,22 +210,22 @@
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
   outline: 0;
-  background: #4CAF50;
+  background: rgba(0, 0, 0, 0.150);
   width: 100%;
   border: 0;
   padding: 15px;
-  color: #FFFFFF;
+  color: rgb(0, 0, 0);
   font-size: 14px;
   -webkit-transition: all 0.3 ease;
   transition: all 0.3 ease;
   cursor: pointer;
 }
 .form button:hover,.form button:active,.form button:focus {
-  background: #43A047;
+  background: rgb(23, 207, 32);
 }
 .form .message {
   margin: 15px 0 0;
-  color: #b3b3b3;
+  color: rgba(0, 0, 0, 0.150);
   font-size: 12px;
 }
 .form .message a {
@@ -251,13 +268,4 @@
 .container .info span .fa {
   color: #EF3B3A;
 }
-body {
-  background: #76b852; /* fallback for old browsers */
-  background: -webkit-linear-gradient(right, #76b852, #8DC26F);
-  background: -moz-linear-gradient(right, #76b852, #8DC26F);
-  background: -o-linear-gradient(right, #76b852, #8DC26F);
-  background: linear-gradient(to left, #76b852, #8DC26F);
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+

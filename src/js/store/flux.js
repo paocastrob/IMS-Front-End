@@ -43,8 +43,50 @@ const getState = ({ getStore, setStore }) => {
 					description: "wow almost leaving",
 					quantity: 4889
 				}
+			],
+
+			saleslist: [
+				{
+					title: "Sales 1",
+					sku: 101,
+					description: "this product is amazing",
+					quantity: 100000000000
+				},
+				{
+					title: "Item 2",
+					sku: 103,
+					description: "wow this is panda",
+					quantity: 4886
+				},
+				{
+					title: "Item 3",
+					sku: 107,
+					description: "wow almost leaving",
+					quantity: 4889
+				}
+			],
+			delivery: [
+				{
+					title: "Item 1",
+					sku: 101,
+					description: "this product is amazing",
+					quantity: 100000000000
+				},
+				{
+					title: "Item 2",
+					sku: 103,
+					description: "wow this is panda",
+					quantity: 4886
+				},
+				{
+					title: "Item 3",
+					sku: 107,
+					description: "wow almost leaving",
+					quantity: 4889
+				}
 			]
 		},
+
 		actions: {
 			scanNewCode: scan => {
 				let store = getStore();
