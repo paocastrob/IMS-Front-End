@@ -70,8 +70,8 @@ const getState = ({ getStore, setStore }) => {
 					})
 				})
 					.then(resp => resp.json())
-					.then(dolphin => console.log(token))
-            },
+					.then(dolphin => console.log(token));
+			},
 
 			scanNewQty: qty => {
 				let store = getStore();

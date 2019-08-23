@@ -12,12 +12,16 @@ export class Login extends React.Component {
 								<div className="login-form">
 									<input type="text" placeholder="username" />
 									<input type="password" placeholder="password" />
-									<button onClick={() => {
-                                        let obj = {
-                                            username: 'user',
-                                            password: 'pass'
-                                        }
-                                    actions.login(pbj)}}>Login</button>
+									<button
+										onClick={() => {
+											let obj = {
+												username: "user",
+												password: "pass"
+											};
+											actions.login(pbj);
+										}}>
+										Login
+									</button>
 									<p className="message">
 										Not registered? <a href="#">Create an account</a>
 									</p>

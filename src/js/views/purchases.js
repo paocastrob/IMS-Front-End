@@ -43,7 +43,7 @@ export class Purchases extends React.Component {
 							);
 						}}
 					</Context.Consumer>
-					<table className="table table-bordered">
+					<table className="table table-bordered tableborder">
 						<thead>
 							<tr>
 								<th scope="col">ID Number</th>
