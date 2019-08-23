@@ -121,7 +121,7 @@ const getState = ({ getStore, setStore }) => {
 					})
 					.then(tokenRecieved => {
 						setStore({ token: tokenRecieved.jwt });
-						props.history.push("/sales");
+						props.history.push("/private/sales");
 					})
 					.catch(err => console.error(err));
 			},

@@ -31,7 +31,7 @@ export class Navbar extends React.Component {
 							</li>
 						</Link>
 
-						<Link to="/sales">
+						<Link to="/private/sales">
 							<li className="nav-item active">
 								<a
 									className="nav-link"
@@ -44,7 +44,7 @@ export class Navbar extends React.Component {
 							</li>
 						</Link>
 
-						<Link to="/purchases">
+						<Link to="/private/purchases">
 							<li className="nav-item active">
 								<a
 									className="nav-link"
@@ -56,7 +56,7 @@ export class Navbar extends React.Component {
 								</a>
 							</li>
 						</Link>
-						<Link to="/inventory">
+						<Link to="/private/inventory">
 							<li className="nav-item active">
 								<a
 									className="nav-link"
@@ -69,7 +69,7 @@ export class Navbar extends React.Component {
 							</li>
 						</Link>
 
-						<Link to="/delivery">
+						<Link to="/private/delivery">
 							<li className="nav-item active">
 								<a
 									className="nav-link"
@@ -82,7 +82,7 @@ export class Navbar extends React.Component {
 							</li>
 						</Link>
 
-						<Link to="/neworder">
+						<Link to="/private/neworder">
 							<li className="nav-item active">
 								<a
 									className="nav-link"

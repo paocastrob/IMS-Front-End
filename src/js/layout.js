@@ -25,18 +25,27 @@ export class Layout extends React.Component {
 			<div className="d-flex flex-column h-100">
 				<BrowserRouter basename={basename}>
 					<ScrollToTop>
-						<Navbar />
 						<Switch>
 							<Route exact path="/" component={Login} />
-							<Route path="/purchases" component={Purchases} />
-							<Route path="/sales" component={Sales} />
-							<Route path="/inventory" component={Inventory} />
-							<Route path="/delivery" component={Delivery} />
-							<Route path="/neworder" component={Saleslist} />
-							<Route path="/single/:theid" component={Single} />
+							<Route
+								path="/private"
+								render={() => (
+									<React.Fragment>
+										<Navbar />
+										<Switch>
+											<Route path="/private/purchases" component={Purchases} />
+											<Route path="/private/sales" component={Sales} />
+											<Route path="/private/inventory" component={Inventory} />
+											<Route path="/private/delivery" component={Delivery} />
+											<Route path="/private/neworder" component={Saleslist} />
+											<Route path="/private/single/:theid" component={Single} />
+										</Switch>
+										<Footer />
+									</React.Fragment>
+								)}
+							/>
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>
-						<Footer />
 					</ScrollToTop>
 				</BrowserRouter>
 			</div>
