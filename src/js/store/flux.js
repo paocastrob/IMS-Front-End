@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
@@ -100,19 +102,28 @@ const getState = ({ getStore, setStore }) => {
 					})
 				});
 			},
-			login: (tiger, lion) => {
-				fetch("https://3000-c88f1bcd-c8c2-41af-9d5e-4e8119812ef1.ws-us0.gitpod.io/login", {
+
+			login: (usernameParameter, passwordParameter, props) => {
+				fetch("https://3000-db7c35eb-5776-4017-bdb0-095b0f95f4dc.ws-us0.gitpod.io/login", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
 					},
+
 					body: JSON.stringify({
-						username: tiger,
-						password: lion
+						username: usernameParameter,
+						password: passwordParameter
 					})
 				})
-					.then(resp => resp.json())
-					.then(dolphin => console.log(token));
+					.then(resp => {
+						if (!resp.ok) throw Error();
+						return resp.json();
+					})
+					.then(tokenRecieved => {
+						setStore({ token: tokenRecieved.jwt });
+						props.history.push("/sales");
+					})
+					.catch(err => console.error(err));
 			},
 
 			scanNewQty: qty => {
@@ -146,6 +157,10 @@ const getState = ({ getStore, setStore }) => {
 			}
 		}
 	};
+};
+
+getState.propTypes = {
+	history: PropTypes.object
 };
 
 export default getState;
