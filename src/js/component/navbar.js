@@ -82,7 +82,11 @@ export class Navbar extends React.Component {
 							</li>
 						</Link>
 
+<<<<<<< HEAD
 						<Link to="/private/neworder">
+=======
+						<Link to="/saleslist">
+>>>>>>> d155e1d67e5447534baaba54b989a2cf3ad03785
 							<li className="nav-item active">
 								<a
 									className="nav-link"

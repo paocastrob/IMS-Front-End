@@ -8,7 +8,7 @@ import { Sales } from "./views/sales";
 import { Inventory } from "./views/inventory";
 import { Delivery } from "./views/delivery";
 import { Single } from "./views/single";
-import { Saleslist } from "./views/neworder";
+import { Saleslist } from "./views/saleslist";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
