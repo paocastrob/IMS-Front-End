@@ -8,7 +8,7 @@ import { Sales } from "./views/sales";
 import { Inventory } from "./views/inventory";
 import { Delivery } from "./views/delivery";
 import { Single } from "./views/single";
-import { Neworder } from "./views/neworder";
+import { Saleslist } from "./views/neworder";
 import injectContext from "./store/appContext";
 
 import { Navbar } from "./component/navbar";
@@ -32,7 +32,7 @@ export class Layout extends React.Component {
 							<Route path="/sales" component={Sales} />
 							<Route path="/inventory" component={Inventory} />
 							<Route path="/delivery" component={Delivery} />
-							<Route path="/neworder" component={Neworder} />
+							<Route path="/neworder" component={Saleslist} />
 							<Route path="/single/:theid" component={Single} />
 							<Route render={() => <h1>Not found!</h1>} />
 						</Switch>

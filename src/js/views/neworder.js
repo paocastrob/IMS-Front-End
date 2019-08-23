@@ -5,7 +5,7 @@ import { Context } from "../store/appContext";
 
 import "../../styles/demo.scss";
 
-export class Neworder extends React.Component {
+export class Saleslist extends React.Component {
 	constructor(props) {
 		super(props);
 		// Don't do this!
@@ -16,7 +16,7 @@ export class Neworder extends React.Component {
 			<div className="row">
 				<div className="col-10 mx-auto">
 					<div className="text-center font">
-						<h1>New Order</h1>
+						<h1>Sales List</h1>
 					</div>
 					<Context.Consumer>
 						{({ store, actions }) => {
@@ -79,7 +79,7 @@ export class Neworder extends React.Component {
 						<tbody>
 							<Context.Consumer>
 								{({ store, actions }) => {
-									return store.neworder.map((item, index) => {
+									return store.saleslist.map((item, index) => {
 										return (
 											<tr key={index}>
 												<th scope="row">{index + 1}</th>

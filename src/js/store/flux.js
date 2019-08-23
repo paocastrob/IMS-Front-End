@@ -43,7 +43,7 @@ const getState = ({ getStore, setStore }) => {
 				}
 			],
 
-			neworder: [
+			saleslist: [
 				{
 					title: "Sales 1",
 					sku: 101,

@@ -90,7 +90,7 @@ export class Navbar extends React.Component {
 									role="button"
 									aria-haspopup="true"
 									aria-expanded="false">
-									<i className="fas fa-folder-open" /> New Order
+									<i className="fas fa-folder-open" /> Sales List
 								</a>
 							</li>
 						</Link>
