@@ -4,90 +4,94 @@ const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
 			products: [],
-			purchases: [
-				{
-					title: "Item 1",
-					sku: 101,
-					description: "this product is amazing",
-					quantity: 100000000000
-				},
-				{
-					title: "Item 2",
-					sku: 103,
-					description: "wow this is panda",
-					quantity: 4886
-				},
-				{
-					title: "Item 3",
-					sku: 107,
-					description: "wow almost leaving",
-					quantity: 4889
-				}
-			],
-			sales: [
-				{
-					title: "Sales 1",
-					sku: 101,
-					description: "this product is amazing",
-					quantity: 100000000000
-				},
-				{
-					title: "Item 2",
-					sku: 103,
-					description: "wow this is panda",
-					quantity: 4886
-				},
-				{
-					title: "Item 3",
-					sku: 107,
-					description: "wow almost leaving",
-					quantity: 4889
-				}
-			],
-
-			saleslist: [
-				{
-					title: "Sales 1",
-					sku: 101,
-					description: "this product is amazing",
-					quantity: 100000000000
-				},
-				{
-					title: "Item 2",
-					sku: 103,
-					description: "wow this is panda",
-					quantity: 4886
-				},
-				{
-					title: "Item 3",
-					sku: 107,
-					description: "wow almost leaving",
-					quantity: 4889
-				}
-			],
-			delivery: [
-				{
-					title: "Item 1",
-					sku: 101,
-					description: "this product is amazing",
-					quantity: 100000000000
-				},
-				{
-					title: "Item 2",
-					sku: 103,
-					description: "wow this is panda",
-					quantity: 4886
-				},
-				{
-					title: "Item 3",
-					sku: 107,
-					description: "wow almost leaving",
-					quantity: 4889
-				}
-			]
+			warehouses: [],
+			sales: [],
+			purchases: []
 		},
 
 		actions: {
+			addToProducts: object => {
+				console.log(object);
+				fetch("https://3000-b00fbadb-74f8-48d4-aea2-d1f585fefeb0.ws-us0.gitpod.io/products/all/", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(object)
+				})
+					.then(response => {
+						if (response.status == 200) return response.json;
+						else console.error("BAD RESPONSE code: " + response.status);
+					})
+					.then(response => {
+						setStore({ products: response }); // OJO, OBJECT ASSIGN IS ALREADY ON APPCONTEXBOILER PLATE
+					})
+					.catch(function(error) {
+						console.error(error);
+					});
+			},
+			products: () => {
+				fetch("https://3000-b00fbadb-74f8-48d4-aea2-d1f585fefeb0.ws-us0.gitpod.io/products/all/")
+					.then(response => response.json())
+					.then(data => {
+						setStore({ products: data }); // OJO, OBJECT ASSIGN IS ALREADY ON APPCONTEXBOILER PLATE
+					});
+			},
+			addToSales: object => {
+				console.log(object);
+				fetch("https://3000-b00fbadb-74f8-48d4-aea2-d1f585fefeb0.ws-us0.gitpod.io/sales/all/", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(object)
+				})
+					.then(response => {
+						if (response.status == 200) return response.json;
+						else console.error("BAD RESPONSE code: " + response.status);
+					})
+					.then(response => {
+						setStore({ sales: response }); // OJO, OBJECT ASSIGN IS ALREADY ON APPCONTEXBOILER PLATE
+					})
+					.catch(function(error) {
+						console.error(error);
+					});
+			},
+			sales: () => {
+				fetch("https://3000-b00fbadb-74f8-48d4-aea2-d1f585fefeb0.ws-us0.gitpod.io/sales/all/")
+					.then(response => response.json())
+					.then(data => {
+						setStore({ sales: data }); // OJO, OBJECT ASSIGN IS ALREADY ON APPCONTEXBOILER PLATE
+					});
+			},
+			addToPurchases: object => {
+				console.log(object);
+				fetch("https://3000-b00fbadb-74f8-48d4-aea2-d1f585fefeb0.ws-us0.gitpod.io/purchases/all", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(object)
+				})
+					.then(response => {
+						if (response.status == 200) return response.json;
+						else console.error("BAD RESPONSE code: " + response.status);
+					})
+					.then(response => {
+						setStore({ tabla2: response }); // OJO, OBJECT ASSIGN IS ALREADY ON APPCONTEXBOILER PLATE
+					})
+					.catch(function(error) {
+						console.error(error);
+					});
+			},
+			purchases: () => {
+				fetch("https://3000-b00fbadb-74f8-48d4-aea2-d1f585fefeb0.ws-us0.gitpod.io/purchases/all")
+					.then(response => response.json())
+					.then(data => {
+						setStore({ tabla1: purchases }); // OJO, OBJECT ASSIGN IS ALREADY ON APPCONTEXBOILER PLATE
+					});
+			},
+
 			scanNewCode: scan => {
 				let store = getStore();
 				let num = store.purchases.length;
@@ -107,7 +111,7 @@ const getState = ({ getStore, setStore }) => {
 			},
 
 			login: (usernameParameter, passwordParameter, props) => {
-				fetch("https://3000-db7c35eb-5776-4017-bdb0-095b0f95f4dc.ws-us0.gitpod.io/login", {
+				fetch("https://3000-b00fbadb-74f8-48d4-aea2-d1f585fefeb0.ws-us0.gitpod.io/login", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
@@ -142,21 +146,6 @@ const getState = ({ getStore, setStore }) => {
 						quantity: 4889
 					})
 				});
-			},
-
-			changeColor: (index, color) => {
-				//get the store
-				const store = getStore();
-
-				//we have to loop the entire demo array to look for the respective index
-				//and change its color
-				const demo = store.demo.map((elm, i) => {
-					if (i === index) elm.background = color;
-					return elm;
-				});
-
-				//reset the global store
-				setStore({ demo: demo });
 			}
 		}
 	};

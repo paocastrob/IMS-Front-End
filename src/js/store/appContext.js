@@ -22,12 +22,10 @@ const injectContext = PassedComponent => {
 		}
 
 		componentDidMount() {
-			fetch("https://3000-db7c35eb-5776-4017-bdb0-095b0f95f4dc.ws-us0.gitpod.io/products/all")
-				.then(response => response.json())
-				.then(data => {
-					let store = this.state.store;
-					this.setState({ store: { ...store, products: data } });
-				});
+			this.state.actions.products();
+			//this.state.actions.table2();
+			//this.state.actions.table3();
+			////this.state.actions.pivot();
 		}
 
 		render() {
