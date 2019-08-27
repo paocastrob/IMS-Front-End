@@ -92,7 +92,7 @@ const getState = ({ getStore, setStore }) => {
 					});
 			},
 
-			scanNewCode: scan => {
+			scanNewCode: (order, scan, quantity) => {
 				let store = getStore();
 				let num = store.purchases.length;
 				let input1 = document.querySelector("#input1");
@@ -102,10 +102,11 @@ const getState = ({ getStore, setStore }) => {
 				console.log("scan: " + num);
 				setStore({
 					purchases: store.purchases.concat({
+						order: order,
 						title: `Item ${num + 1}`,
 						sku: scan,
 						description: "wow almost leaving",
-						quantity: 4889
+						quantity: quantity
 					})
 				});
 			},
