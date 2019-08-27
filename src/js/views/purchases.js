@@ -70,12 +70,10 @@ export class Purchases extends React.Component {
 					<table className="table table-bordered tableborder">
 						<thead>
 							<tr>
-								<th scope="col">ID Number</th>
-								<th scope="col">SKU</th>
-								<th scope="col">Description</th>
+								<th scope="col">Item</th>
+								<th scope="col">Product ID</th>
 								<th scope="col">Quantity</th>
-								<th scope="col">Date</th>
-								<th scope="col">Order Number</th>
+								<th scope="col">Sales ID</th>
 								<th scope="col">{/*space for x's*/}</th>
 							</tr>
 						</thead>
