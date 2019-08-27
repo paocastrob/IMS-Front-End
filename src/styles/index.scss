@@ -34,6 +34,10 @@ h1 {
  font-size: 90px;
 }
 
+.map{
+height: 200px;
+}
+
 // @import url(https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,300italic,700);
 // body{
 //     background:url("https://b8d4c2f2-e45a-4e3d-ae54-c22d19666c88.ws-us0.gitpod.io/mini-browser/workspace/IMS-Front-End/src/img/bg-orange.png")
@@ -235,12 +239,7 @@ h1 {
 .form .register-form {
   display: none;
 }
-.container {
-  position: relative;
-  z-index: 1;
-  max-width: 300px;
-  margin: 0 auto;
-}
+
 .container:before, .container:after {
   content: "";
   display: block;
@@ -266,7 +265,7 @@ h1 {
   text-decoration: none;
 }
 .container .info span .fa {
-  color: #EF3B3A;
+  color: rgba(239, 58, 58, 0.418);
 }
 
 .column {
@@ -284,8 +283,13 @@ h1 {
 
   body{
       font-family: 'Exo', sans-serif;
+      background: rgba(0, 0, 0, 0.842);
   }
 
+.logistics{
+    background: rgb(212, 71, 95);
+
+}
 
   .context {
       width: 100%;
@@ -325,7 +329,7 @@ h1 {
       list-style: none;
       width: 20px;
       height: 20px;
-      background: rgb(214, 59, 92);
+      background: rgba(214, 59, 93, 0.384);
       animation: animate 25s linear infinite;
       bottom: -150px;
 

@@ -40,7 +40,7 @@ export class Dashboard extends React.Component {
 							<div className="column col-2 bg-info border border-dark text-light text-center">
 								<i className="fas fa-list-ul fa-4x mt-5" />
 							</div>
-							<div className="column col-8 bg-dark border border-dark text-light text-center">
+							<div className="column col-8 logistics border border-dark text-light text-center">
 								<i className="fas fa-motorcycle fa-5x mt-5" />
 							</div>
 						</div>
