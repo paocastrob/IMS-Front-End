@@ -60,6 +60,15 @@ export class Sales extends React.Component {
 											</button>
 										</div>
 									</div>
+
+									<div className="form-group">
+										<label htmlFor="exampleFormControlSelect1">Available Warehouse</label>
+										<select className="form-control col-sm-4" id="exampleFormControlSelect1">
+											<option>Warehouse 1</option>
+											<option>Warehouse 2</option>
+											<option>Warehouse 3</option>
+										</select>
+									</div>
 								</React.Fragment>
 							);
 						}}
