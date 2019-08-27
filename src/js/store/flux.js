@@ -111,7 +111,7 @@ const getState = ({ getStore, setStore }) => {
 			},
 
 			login: (usernameParameter, passwordParameter, props) => {
-				fetch("https://3000-b00fbadb-74f8-48d4-aea2-d1f585fefeb0.ws-us0.gitpod.io/login", {
+				fetch("https://imsapiproject.herokuapp.com/login", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
