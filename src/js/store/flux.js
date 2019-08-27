@@ -12,7 +12,7 @@ const getState = ({ getStore, setStore }) => {
 		actions: {
 			addToProducts: object => {
 				console.log(object);
-				fetch("https://3000-b00fbadb-74f8-48d4-aea2-d1f585fefeb0.ws-us0.gitpod.io/products/all/", {
+				fetch("https://imsapiproject.herokuapp.com/products/all", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
@@ -31,7 +31,7 @@ const getState = ({ getStore, setStore }) => {
 					});
 			},
 			products: () => {
-				fetch("https://3000-b00fbadb-74f8-48d4-aea2-d1f585fefeb0.ws-us0.gitpod.io/products/all/")
+				fetch("https://imsapiproject.herokuapp.com/products/all")
 					.then(response => response.json())
 					.then(data => {
 						setStore({ products: data }); // OJO, OBJECT ASSIGN IS ALREADY ON APPCONTEXBOILER PLATE
@@ -39,7 +39,7 @@ const getState = ({ getStore, setStore }) => {
 			},
 			addToSales: object => {
 				console.log(object);
-				fetch("https://3000-b00fbadb-74f8-48d4-aea2-d1f585fefeb0.ws-us0.gitpod.io/sales/all/", {
+				fetch("https://imsapiproject.herokuapp.com/sales/all", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
@@ -58,7 +58,7 @@ const getState = ({ getStore, setStore }) => {
 					});
 			},
 			sales: () => {
-				fetch("https://3000-b00fbadb-74f8-48d4-aea2-d1f585fefeb0.ws-us0.gitpod.io/sales/all/")
+				fetch("https://imsapiproject.herokuapp.com/sales/all")
 					.then(response => response.json())
 					.then(data => {
 						setStore({ sales: data }); // OJO, OBJECT ASSIGN IS ALREADY ON APPCONTEXBOILER PLATE
@@ -66,7 +66,7 @@ const getState = ({ getStore, setStore }) => {
 			},
 			addToPurchases: object => {
 				console.log(object);
-				fetch("https://3000-b00fbadb-74f8-48d4-aea2-d1f585fefeb0.ws-us0.gitpod.io/purchases/all", {
+				fetch("https://imsapiproject.herokuapp.com/purchases/all", {
 					method: "POST",
 					headers: {
 						"Content-Type": "application/json"
@@ -85,7 +85,7 @@ const getState = ({ getStore, setStore }) => {
 					});
 			},
 			purchases: () => {
-				fetch("https://3000-b00fbadb-74f8-48d4-aea2-d1f585fefeb0.ws-us0.gitpod.io/purchases/all")
+				fetch("https://imsapiproject.herokuapp.com/purchases/all")
 					.then(response => response.json())
 					.then(data => {
 						setStore({ tabla1: purchases }); // OJO, OBJECT ASSIGN IS ALREADY ON APPCONTEXBOILER PLATE

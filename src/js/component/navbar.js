@@ -94,28 +94,7 @@ export class Navbar extends React.Component {
 								</a>
 							</li>
 						</Link>
-
-						<div className="dropdown-menu" aria-labelledby="navbarDropdown">
-							<a className="dropdown-item" href="#">
-								Action Inventory
-							</a>
-							<a className="dropdown-item" href="#">
-								Another action
-							</a>
-							<div className="dropdown-divider" />
-							<a className="dropdown-item" href="#">
-								Something else here
-							</a>
-						</div>
 					</ul>
-					<form className="form-inline my-2 my-lg-0">
-						<input
-							className="form-control mr-sm-2"
-							type="search"
-							placeholder="Search"
-							aria-label="Search"
-						/>
-					</form>
 				</div>
 			</nav>
 		);
