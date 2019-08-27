@@ -18,15 +18,19 @@ export class Login extends React.Component {
 						<div className="login-page">
 							<div className="form">
 								<div className="login-form">
-									<input type="text" placeholder="username" />
-									<input type="password" placeholder="password" />
+									<input
+										onChange={e => this.setState({ username: e.target.value })}
+										type="text"
+										placeholder="username"
+									/>
+									<input
+										onChange={e => this.setState({ password: e.target.value })}
+										type="password"
+										placeholder="password"
+									/>
 									<button
 										onClick={() => {
-											let usernameVariable = document.querySelector("[placeholder=username]")
-												.value;
-											let passwordVariable = document.querySelector("[placeholder=password]")
-												.value;
-											actions.login(usernameVariable, passwordVariable, this.props);
+											actions.login(this.state.username, this.state.password, this.props);
 										}}>
 										Login
 									</button>

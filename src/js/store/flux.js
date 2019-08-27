@@ -65,6 +65,7 @@ const getState = ({ getStore, setStore }) => {
 					quantity: 4889
 				}
 			],
+			token: null,
 			delivery: [
 				{
 					title: "Item 1",
@@ -105,7 +106,10 @@ const getState = ({ getStore, setStore }) => {
 					})
 				});
 			},
-
+			logout: () => {
+				const store = getStore();
+				setStore({ token: null });
+			},
 			login: (usernameParameter, passwordParameter, props) => {
 				fetch("https://3000-db7c35eb-5776-4017-bdb0-095b0f95f4dc.ws-us0.gitpod.io/login", {
 					method: "POST",

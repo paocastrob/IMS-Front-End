@@ -7,6 +7,7 @@ import { Purchases } from "./views/purchases";
 import { Sales } from "./views/sales";
 import { Inventory } from "./views/inventory";
 import { Delivery } from "./views/delivery";
+import { Dashboard } from "./views/dashboard";
 import { Single } from "./views/single";
 import { Saleslist } from "./views/saleslist";
 import injectContext from "./store/appContext";
@@ -35,6 +36,7 @@ export class Layout extends React.Component {
 										<Switch>
 											<Route path="/private/purchases" component={Purchases} />
 											<Route path="/private/sales" component={Sales} />
+											<Route path="/private/dashboard" component={Dashboard} />
 											<Route path="/private/inventory" component={Inventory} />
 											<Route path="/private/delivery" component={Delivery} />
 											<Route path="/private/neworder" component={Saleslist} />
