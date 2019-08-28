@@ -520,6 +520,8 @@ tr:hover {
 .inventory {
   position: relative;
   width: 50%;
+  background: rgb(212, 71, 95);
+  margin-right: 4px;
 }
 
 .inventoryicon {
@@ -597,6 +599,7 @@ tr:hover {
 .list{
   position: relative;
   width: 50%;
+  margin-right: 4px;
 }
 
 .listicon {
@@ -638,4 +641,8 @@ li:hover {
     color: green;
     background-color: #138496;
 
+}
+
+a {
+color:white;
 }
