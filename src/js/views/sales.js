@@ -71,6 +71,17 @@ export class Sales extends React.Component {
 												className="btn btn-info m-1">
 												Add
 											</button>
+											<button
+												onClick={() =>
+													actions.orderNewCode(
+														this.state.order,
+														this.state.scan,
+														this.state.quantity
+													)
+												}
+												className="btn btn-success m-1">
+												Submit
+											</button>
 										</div>
 									</div>
 
