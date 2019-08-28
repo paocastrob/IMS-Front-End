@@ -428,3 +428,11 @@ height: 200px;
       }
 
   }
+
+h1, h2, h3, p, th, tr {
+    color: white;
+}
+
+tr:hover {
+    background-color: purple;
+}
