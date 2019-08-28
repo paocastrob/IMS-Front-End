@@ -113,6 +113,28 @@ const getState = ({ getStore, setStore }) => {
 					})
 				});
 			},
+
+			orderNewCode: (order, scan, quantity) => {
+				let store = getStore();
+				let num = store.purchases.length;
+				let input1 = document.querySelector("#input1");
+				input1.value = "";
+				let input2 = document.querySelector("#input2");
+				input2.value = "";
+				let input3 = document.querySelector("#input3");
+				input3.value = "";
+
+				console.log("scan: " + num);
+				setStore({
+					sales: store.sales.concat({
+						order: order,
+						title: `Item ${num + 1}`,
+						sku: scan,
+						description: "Product description",
+						quantity: quantity
+					})
+				});
+			},
 			logout: () => {
 				const store = getStore();
 				setStore({ token: null });
