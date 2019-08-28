@@ -1,5 +1,4 @@
 import React from "react";
-import rigoImage from "../../img/rigo-baby.jpg";
 import "../../styles/home.scss";
 import { Context } from "../store/appContext";
 export class Inventory extends React.Component {
@@ -13,6 +12,9 @@ export class Inventory extends React.Component {
 	render() {
 		return (
 			<div>
+				<div className="text-center font">
+					<h1>Inventory</h1>
+				</div>
 				<div className="col-6 offset-2 mt-5">
 					<div className="form-group">
 						<input
