@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export class Dashboard extends React.Component {
 	render() {
 		return (
-			<div className="container">
+			<div className=" dashboard container">
 				<ul className="circles mb-0">
 					<li />
 					<li />
@@ -19,7 +19,7 @@ export class Dashboard extends React.Component {
 					<li />
 					<li />
 				</ul>
-				<div className="fila row mb-5">
+				<div className="fila row">
 					<div className="col-8 offset-2 mt-5">
 						<div className="row">
 							<div className="inventory column col border border-dark text-center text-light">

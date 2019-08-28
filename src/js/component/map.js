@@ -18,7 +18,7 @@ export class MapContainer extends React.Component {
 						<Map
 							google={this.props.google}
 							zoom={10}
-							style={{ width: "100%", height: "100%" }}
+							style={{ width: "200px", height: "200px" }}
 							initialCenter={{ lat: this.props.lat, lng: this.props.lng }}>
 							<Marker position={{ lat: this.props.lat, lng: this.props.lng }} name={"Current location"} />
 						</Map>

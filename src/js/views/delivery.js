@@ -13,20 +13,37 @@ export class Delivery extends React.Component {
 			<Context.Consumer>
 				{({ store, actions }) => {
 					return (
-						<div className="container">
+						<div className="container mt-4">
 							<div className="row w-100">
-								<div className="col bg-">
+								<div className="col">
 									<h3>ID</h3>
 								</div>
 								<div className="col">
-									<h3>STATUS</h3>
+									<h3>Name</h3>
 								</div>
 								<div className="col">
-									<h3>LOCATION </h3>
+									<h3>Latitude </h3>
 								</div>
-								<div className="col map">
-									<h3>LOCATION </h3>
+								<div className="col">
+									<h3>Longitude </h3>
+								</div>
+								<div className="col">
+									<h3>Map </h3>
+								</div>
+								<div className="col" />
+							</div>
+							<div className="row">
+								<div className="col" />
+								<div className="col" />
+								<div className="col" />
+								<div className="col" />
+								<div className="col ">
 									<GoogleMap lat={23} lng={10} />
+								</div>
+								<div className="col">
+									<button type="button" className="btn btn-primary">
+										Primary
+									</button>
 								</div>
 							</div>
 						</div>
