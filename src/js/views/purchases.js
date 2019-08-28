@@ -32,6 +32,7 @@ export class Purchases extends React.Component {
 									<div className="row">
 										<div className="col-3">
 											<input
+												id="input1"
 												placeholder="Enter order number:"
 												className="mb-2 border w-100"
 												onChange={e => this.setState({ order: e.target.value })}
@@ -41,7 +42,7 @@ export class Purchases extends React.Component {
 									<div className="row">
 										<div className="col-3">
 											<input
-												id="input1"
+												id="input2"
 												placeholder="Scan Barcode..."
 												className="mb-2 border w-100"
 												onChange={e => this.setState({ scan: e.target.value })}
@@ -51,6 +52,7 @@ export class Purchases extends React.Component {
 									<div className="row">
 										<div className="col-3">
 											<input
+												id="input3"
 												placeholder="Enter Quantity..."
 												className="mb-3 border w-100"
 												onChange={e => this.setState({ quantity: e.target.value })}
