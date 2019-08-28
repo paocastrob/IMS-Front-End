@@ -9,7 +9,11 @@ export class Sales extends React.Component {
 	constructor(props) {
 		super(props);
 		// Don't do this!
-		this.state = { scan: "" };
+		this.state = {
+			order: "",
+			scan: "",
+			quantity: ""
+		};
 	}
 	render() {
 		return (
@@ -29,15 +33,17 @@ export class Sales extends React.Component {
 									<div className="row">
 										<div className="col-3">
 											<input
+												id="input1"
 												placeholder="Enter order number:"
 												className="mb-2 border w-100"
-												onChange={e => this.setState({ scan: e.target.value })}
+												onChange={e => this.setState({ order: e.target.value })}
 											/>
 										</div>
 									</div>
 									<div className="row">
 										<div className="col-3">
 											<input
+												id="input2"
 												placeholder="Scan Barcode..."
 												className="mb-2 border w-100"
 												onChange={e => this.setState({ scan: e.target.value })}
@@ -47,14 +53,21 @@ export class Sales extends React.Component {
 									<div className="row">
 										<div className="col-3">
 											<input
+												id="input3"
 												placeholder="Enter Quantity..."
 												className="mb-3 border w-100"
-												onChange={e => this.setState({ qty: e.target.value })}
+												onChange={e => this.setState({ quantity: e.target.value })}
 											/>
 										</div>
 										<div className="col-4 ">
 											<button
-												onClick={() => actions.scanNewCode(this.state.scan)}
+												onClick={() =>
+													actions.orderNewCode(
+														this.state.order,
+														this.state.scan,
+														this.state.quantity
+													)
+												}
 												className="btn btn-info m-1">
 												Add
 											</button>
