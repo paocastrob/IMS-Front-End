@@ -58,7 +58,7 @@ export class Dashboard extends React.Component {
 
 						<div className="row">
 							<div className="list column col bg-primary border border-dark text-light text-center">
-								<Link to="/private/">
+								<Link to="/private/salesList">
 									<i className="listicon fas fa-list fa-4x mt-5" />
 									<div className="overlay5">
 										<div className="text5">Sales List</div>
