@@ -23,6 +23,7 @@ const injectContext = PassedComponent => {
 
 		componentDidMount() {
 			this.state.actions.products();
+			this.state.actions.purchases();
 			this.state.actions.warehouses();
 			//this.state.actions.table3();
 			////this.state.actions.pivot();
