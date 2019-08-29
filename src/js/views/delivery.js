@@ -13,39 +13,55 @@ export class Delivery extends React.Component {
 			<Context.Consumer>
 				{({ store, actions }) => {
 					return (
-						<div className="container mt-4">
-							<div className="row w-100">
-								<div className="col">
-									<h3>ID</h3>
+						<div className="container mt-5">
+							<div className="row mb-5 bg-dark pt-2">
+								<div className="col text-light">
+									<h5>Warehouse Name</h5>
 								</div>
-								<div className="col">
-									<h3>Name</h3>
+								<div className="col text-light">
+									<h5>Products in the Warehouse</h5>
 								</div>
-								<div className="col">
-									<h3>Latitude </h3>
+								<div className="col text-light">
+									<h5 className="pl-3">Warehouse Location</h5>
 								</div>
-								<div className="col">
-									<h3>Longitude </h3>
-								</div>
-								<div className="col">
-									<h3>Map </h3>
-								</div>
-								<div className="col" />
-							</div>
-							<div className="row">
-								<div className="col" />
-								<div className="col" />
-								<div className="col" />
-								<div className="col" />
-								<div className="col mr-5">
-									<GoogleMap lat={23} lng={10} />
-								</div>
-								<div className="col">
-									<button type="button" className="btn btn-primary ml-5">
-										Primary
-									</button>
+								<div className="col text-light">
+									<h5>Update Location</h5>
 								</div>
 							</div>
+							{store.warehouses.map((item, index) => {
+								return (
+									<div className="row map" key={index}>
+										<div className="col text-warning pt-5 pl-5">
+											<h4>{item.warehouse_name.toUpperCase()}</h4>
+										</div>
+										<div className="col pt-5 pl-5">
+											<ul>
+												{item.products.map((item, index) => {
+													return (
+														<li key={index} className="text-light">
+															{item.products_id}
+														</li>
+													);
+												})}
+											</ul>
+										</div>
+
+										<div className="col">
+											<row className="map">
+												<GoogleMap lat={item.latitude} lng={item.longitude} />
+											</row>
+										</div>
+
+										<div className="col text-light pt-5 pl-5">
+											<button
+												className="btn btn-danger"
+												onClick={() => actions.updateLocation(item.id)}>
+												Update Location
+											</button>
+										</div>
+									</div>
+								);
+							})}
 						</div>
 					);
 				}}
