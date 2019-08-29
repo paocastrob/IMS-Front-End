@@ -12,8 +12,12 @@ export class Sales extends React.Component {
 		this.state = {
 			order: "",
 			scan: "",
-			quantity: ""
+			quantity: "",
+			warehouse: ""
 		};
+	}
+	componentDidMount() {
+		this.nameInput.focus();
 	}
 	render() {
 		return (
@@ -33,6 +37,9 @@ export class Sales extends React.Component {
 									<div className="row">
 										<div className="col-3">
 											<input
+												ref={input => {
+													this.nameInput = input;
+												}}
 												id="input1"
 												placeholder="Enter order number:"
 												className="mb-2 border w-100"
@@ -50,6 +57,7 @@ export class Sales extends React.Component {
 											/>
 										</div>
 									</div>
+
 									<div className="row">
 										<div className="col-3">
 											<input
@@ -59,39 +67,45 @@ export class Sales extends React.Component {
 												onChange={e => this.setState({ quantity: e.target.value })}
 											/>
 										</div>
+									</div>
+									<div className="row">
+										<div className="col-3">
+											<label className="text-white" htmlFor="exampleFormControlSelect1">
+												Available Warehouses
+											</label>
+											<select
+												onChange={e => this.setState({ warehouse: e.target.value })}
+												className="form-control col-sm-4"
+												id="exampleFormControlSelect1">
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+											</select>
+										</div>
+									</div>
+									<div className="row mt-3">
 										<div className="col-4 ">
 											<button
-												onClick={() =>
-													actions.orderNewCode(
+												onClick={() => {
+													this.nameInput.focus();
+													actions.addANewSale(
 														this.state.order,
 														this.state.scan,
-														this.state.quantity
-													)
-												}
-												className="btn btn-info m-1">
+														this.state.quantity,
+														this.state.warehouse
+													);
+												}}
+												className="btn btn-info m-0">
 												Add
 											</button>
 											<button
-												onClick={() =>
-													actions.orderNewCode(
-														this.state.order,
-														this.state.scan,
-														this.state.quantity
-													)
-												}
+												onClick={() => {
+													actions.submitNewSales();
+												}}
 												className="btn btn-success m-1">
 												Submit
 											</button>
 										</div>
-									</div>
-
-									<div className="form-group">
-										<label htmlFor="exampleFormControlSelect1">Available Warehouse</label>
-										<select className="form-control col-sm-4" id="exampleFormControlSelect1">
-											<option>Warehouse 1</option>
-											<option>Warehouse 2</option>
-											<option>Warehouse 3</option>
-										</select>
 									</div>
 								</React.Fragment>
 							);
@@ -116,11 +130,11 @@ export class Sales extends React.Component {
 										return (
 											<tr key={index}>
 												<th scope="row">{index + 1}</th>
-												<td>{item.title}</td>
 												<td>{item.sku}</td>
 												<td>{item.description}</td>
-												<td>@mdo</td>
-												<td>@mdo</td>
+												<td>{item.quantity}</td>
+												<td>08/27/2019</td>
+												<td>{item.order}</td>
 												<td>
 													<i className="far fa-times-circle fa-2x pt-2 pl-1 text-danger" />
 												</td>

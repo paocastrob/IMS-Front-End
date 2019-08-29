@@ -11,8 +11,12 @@ export class Purchases extends React.Component {
 		this.state = {
 			order: "",
 			scan: "",
-			quantity: ""
+			quantity: "",
+			warehouse: "'"
 		};
+	}
+	componentDidMount() {
+		this.nameInput.focus();
 	}
 	render() {
 		return (
@@ -32,6 +36,9 @@ export class Purchases extends React.Component {
 									<div className="row">
 										<div className="col-3">
 											<input
+												ref={input => {
+													this.nameInput = input;
+												}}
 												id="input1"
 												placeholder="Enter order number:"
 												className="mb-2 border w-100"
@@ -58,26 +65,41 @@ export class Purchases extends React.Component {
 												onChange={e => this.setState({ quantity: e.target.value })}
 											/>
 										</div>
+									</div>
+									<div className="row">
+										<div className="col-3">
+											<label className="text-white" htmlFor="exampleFormControlSelect1">
+												Available Warehouses
+											</label>
+											<select
+												onChange={e => this.setState({ warehouse: e.target.value })}
+												className="form-control col-sm-4"
+												id="exampleFormControlSelect1">
+												<option>1</option>
+												<option>2</option>
+												<option>3</option>
+											</select>
+										</div>
+									</div>
+									<div className="row mt-3">
 										<div className="col-4 ">
 											<button
-												onClick={() =>
-													actions.scanNewCode(
+												onClick={() => {
+													this.nameInput.focus();
+													actions.addANewPurchase(
 														this.state.order,
 														this.state.scan,
-														this.state.quantity
-													)
-												}
-												className="btn btn-info m-1">
+														this.state.quantity,
+														this.state.warehouse
+													);
+												}}
+												className="btn btn-info m-0">
 												Add
 											</button>
 											<button
-												onClick={() =>
-													actions.scanNewCode(
-														this.state.order,
-														this.state.scan,
-														this.state.quantity
-													)
-												}
+												onClick={() => {
+													actions.submitNewPurchases();
+												}}
 												className="btn btn-success m-1">
 												Submit
 											</button>

@@ -65,6 +65,15 @@ const getState = ({ getStore, setStore }) => {
 						setStore({ sales: data }); // OJO, OBJECT ASSIGN IS ALREADY ON APPCONTEXBOILER PLATE
 					});
 			},
+			submitPurchases: object => {
+				fetch("https://imsapiproject.herokuapp.com/transactions/new", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(object)
+				});
+			},
 			addToPurchases: object => {
 				console.log(object);
 				fetch("https://imsapiproject.herokuapp.com/purchases/all", {
@@ -127,7 +136,7 @@ const getState = ({ getStore, setStore }) => {
 				});
 			},
 
-			orderNewCode: (order, scan, quantity) => {
+			addANewSale: (order, scan, quantity, warehouse) => {
 				let store = getStore();
 				let num = store.purchases.length;
 				let input1 = document.querySelector("#input1");
@@ -140,12 +149,62 @@ const getState = ({ getStore, setStore }) => {
 				console.log("scan: " + num);
 				setStore({
 					sales: store.sales.concat({
-						order: order,
+						products_id: Number(scan),
 						title: `Item ${num + 1}`,
-						sku: scan,
-						description: "Product description",
-						quantity: quantity
+						purchases_id: null,
+
+						quantity: Number(quantity),
+						warehouses_id: Number(warehouse)
 					})
+				});
+			},
+			submitNewSales: () => {
+				let store = getStore();
+				let obj = store.sales;
+				console.log("obj", obj);
+				fetch("https://imsapiproject.herokuapp.com/transactions/new/map", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(obj)
+				}).then(() => {
+					setStore({ sales: [] });
+				});
+			},
+			addANewPurchase: (order, scan, quantity, warehouse) => {
+				let store = getStore();
+				let num = store.purchases.length;
+				let input1 = document.querySelector("#input1");
+				input1.value = "";
+				let input2 = document.querySelector("#input2");
+				input2.value = "";
+				let input3 = document.querySelector("#input3");
+				input3.value = "";
+
+				console.log("scan: " + num);
+				setStore({
+					purchases: store.purchases.concat({
+						products_id: Number(scan),
+						title: `Item ${num + 1}`,
+						sales_id: null,
+
+						quantity: Number(quantity),
+						warehouses_id: Number(warehouse)
+					})
+				});
+			},
+			submitNewPurchases: () => {
+				let store = getStore();
+				let obj = store.purchases;
+				fetch("https://imsapiproject.herokuapp.com/transactions/new/map", {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(obj)
+				}).then(() => {
+					setStore({ purchases: [] });
 				});
 			},
 			logout: () => {

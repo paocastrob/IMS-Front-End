@@ -26,6 +26,10 @@ const injectContext = PassedComponent => {
 			this.state.actions.purchases();
 			this.state.actions.sales();
 			this.state.actions.warehouses();
+			setInterval(() => {
+				this.state.actions.warehouses();
+			}, 10000);
+
 			//this.state.actions.table3();
 			////this.state.actions.pivot();
 		}
