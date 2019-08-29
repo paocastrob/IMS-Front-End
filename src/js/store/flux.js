@@ -92,20 +92,6 @@ const getState = ({ getStore, setStore }) => {
 						setStore({ purchases: data }); // OJO, OBJECT ASSIGN IS ALREADY ON APPCONTEXBOILER PLATE
 					});
 			},
-			purchasesList: () => {
-				fetch("https://imsapiproject.herokuapp.com/purchases/all")
-					.then(response => response.json())
-					.then(data => {
-						setStore({ tabla1: purchases }); // OJO, OBJECT ASSIGN IS ALREADY ON APPCONTEXBOILER PLATE
-					});
-			},
-			salesList: () => {
-				fetch("https://imsapiproject.herokuapp.com/sales/all")
-					.then(response => response.json())
-					.then(data => {
-						setStore({ tabla1: purchases }); // OJO, OBJECT ASSIGN IS ALREADY ON APPCONTEXBOILER PLATE
-					});
-			},
 
 			scanNewCode: (order, scan, quantity) => {
 				let store = getStore();
