@@ -6,7 +6,8 @@ const getState = ({ getStore, setStore }) => {
 			products: [],
 			warehouses: [],
 			sales: [],
-			purchases: []
+			purchases: [],
+			purchasesList: []
 		},
 
 		actions: {
@@ -86,6 +87,20 @@ const getState = ({ getStore, setStore }) => {
 			},
 			purchases: () => {
 				fetch("https://imsapiproject.herokuapp.com/purchases/all")
+					.then(response => response.json())
+					.then(data => {
+						setStore({ purchases: data }); // OJO, OBJECT ASSIGN IS ALREADY ON APPCONTEXBOILER PLATE
+					});
+			},
+			purchasesList: () => {
+				fetch("https://imsapiproject.herokuapp.com/purchases/all")
+					.then(response => response.json())
+					.then(data => {
+						setStore({ tabla1: purchases }); // OJO, OBJECT ASSIGN IS ALREADY ON APPCONTEXBOILER PLATE
+					});
+			},
+			salesList: () => {
+				fetch("https://imsapiproject.herokuapp.com/sales/all")
 					.then(response => response.json())
 					.then(data => {
 						setStore({ tabla1: purchases }); // OJO, OBJECT ASSIGN IS ALREADY ON APPCONTEXBOILER PLATE

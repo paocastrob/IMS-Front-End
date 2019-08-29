@@ -37,11 +37,11 @@ export class Delivery extends React.Component {
 								<div className="col" />
 								<div className="col" />
 								<div className="col" />
-								<div className="col ">
+								<div className="col mr-5">
 									<GoogleMap lat={23} lng={10} />
 								</div>
 								<div className="col">
-									<button type="button" className="btn btn-primary">
+									<button type="button" className="btn btn-primary ml-5">
 										Primary
 									</button>
 								</div>
