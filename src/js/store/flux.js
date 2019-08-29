@@ -6,7 +6,8 @@ const getState = ({ getStore, setStore }) => {
 			products: [],
 			warehouses: [],
 			sales: [],
-			purchases: []
+			purchases: [],
+			purchasesList: []
 		},
 
 		actions: {
@@ -97,8 +98,20 @@ const getState = ({ getStore, setStore }) => {
 				fetch("https://imsapiproject.herokuapp.com/purchases/all")
 					.then(response => response.json())
 					.then(data => {
-						setStore({ tabla1: purchases }); // OJO, OBJECT ASSIGN IS ALREADY ON APPCONTEXBOILER PLATE
+						setStore({ purchases: data }); // OJO, OBJECT ASSIGN IS ALREADY ON APPCONTEXBOILER PLATE
 					});
+			},
+
+			warehouses: () => {
+				fetch("https://imsapiproject.herokuapp.com/warehouses/all")
+					.then(response => response.json())
+					.then(data => {
+						setStore({ warehouses: data }); // OJO, OBJECT ASSIGN IS ALREADY ON APPCONTEXBOILER PLATE
+					});
+			},
+
+			updateLocation: id => {
+				fetch("https://imsapiproject.herokuapp.com/smstotwilio/" + id);
 			},
 
 			scanNewCode: (order, scan, quantity) => {
@@ -216,7 +229,7 @@ const getState = ({ getStore, setStore }) => {
 					})
 					.then(tokenRecieved => {
 						setStore({ token: tokenRecieved.jwt });
-						props.history.push("/private/sales");
+						props.history.push("/private/dashboard");
 					})
 					.catch(err => console.error(err));
 			},

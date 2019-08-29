@@ -3,12 +3,12 @@ import { Context } from "../store/appContext";
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 
-export class Login extends React.Component {
+export class Register extends React.Component {
 	render() {
 		return (
 			<React.Fragment>
 				<div className="text-center font mt-5">
-					<h1>IMS Login</h1>
+					<h1>IMS Register</h1>
 				</div>
 				<Context.Consumer>
 					{({ actions }) => {
@@ -19,7 +19,7 @@ export class Login extends React.Component {
 										<input
 											onChange={e => this.setState({ username: e.target.value })}
 											type="text"
-											placeholder="Username"
+											placeholder="Email / Username"
 											className="login-form"
 										/>
 										<input
@@ -32,10 +32,15 @@ export class Login extends React.Component {
 											onClick={() => {
 												actions.login(this.state.username, this.state.password, this.props);
 											}}>
-											<h2>Login</h2>
+											<h2>Register</h2>
 										</button>
 										<p className="message">
-											Not registered? <Link to="/register">Create an account.</Link>
+											Already registered? <Link to="/">Login!</Link>
+										</p>
+										<p className="message">
+											Don
+											{"'"}t feel like waiting?{" "}
+											<Link to="private/dashboard">Go to dashboard!!</Link>
 										</p>
 									</div>
 								</div>

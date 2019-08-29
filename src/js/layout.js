@@ -3,7 +3,9 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
 
 import { Login } from "./component/login";
+import { Register } from "./component/register";
 import { Purchases } from "./views/purchases";
+import { PurchasesList } from "./views/purchasesList";
 import { Sales } from "./views/sales";
 import { Inventory } from "./views/inventory";
 import { Delivery } from "./views/delivery";
@@ -28,6 +30,8 @@ export class Layout extends React.Component {
 					<ScrollToTop>
 						<Switch>
 							<Route exact path="/" component={Login} />
+							<Route exact path="/register" component={Register} />
+							<Route path="/private/dashboard" component={Dashboard} />
 							<Route
 								path="/private"
 								render={() => (
@@ -35,8 +39,8 @@ export class Layout extends React.Component {
 										<Navbar />
 										<Switch>
 											<Route path="/private/purchases" component={Purchases} />
+											<Route path="/private/purchasesList" component={PurchasesList} />
 											<Route path="/private/sales" component={Sales} />
-											<Route path="/private/dashboard" component={Dashboard} />
 											<Route path="/private/inventory" component={Inventory} />
 											<Route path="/private/delivery" component={Delivery} />
 											<Route path="/private/neworder" component={Saleslist} />
