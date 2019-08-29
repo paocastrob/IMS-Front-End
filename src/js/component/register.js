@@ -37,6 +37,11 @@ export class Register extends React.Component {
 										<p className="message">
 											Already registered? <Link to="/">Login!</Link>
 										</p>
+										<p className="message">
+											Don
+											{"'"}t feel like waiting?{" "}
+											<Link to="private/dashboard">Go to dashboard!!</Link>
+										</p>
 									</div>
 								</div>
 							</div>
