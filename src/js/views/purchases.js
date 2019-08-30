@@ -124,7 +124,7 @@ export class Purchases extends React.Component {
 						<tbody>
 							<Context.Consumer>
 								{({ store, actions }) => {
-									return store.purchases.map((item, index) => {
+									return store.purchasesList.map((item, index) => {
 										return (
 											<tr key={index}>
 												<td scope="row">{index + 1}</td>

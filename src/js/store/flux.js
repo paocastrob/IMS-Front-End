@@ -6,6 +6,7 @@ const getState = ({ getStore, setStore }) => {
 			products: [],
 			warehouses: [],
 			sales: [],
+			salesList: [],
 			purchases: [],
 			purchasesList: []
 		},
@@ -148,19 +149,19 @@ const getState = ({ getStore, setStore }) => {
 
 				console.log("scan: " + num);
 				setStore({
-					sales: store.sales.concat({
+					salesList: store.salesList.concat({
 						products_id: Number(scan),
 						title: `Item ${num + 1}`,
 						purchases_id: null,
 
-						quantity: Number(quantity),
+						quantity: Number(quantity) * -1,
 						warehouses_id: Number(warehouse)
 					})
 				});
 			},
 			submitNewSales: () => {
 				let store = getStore();
-				let obj = store.sales;
+				let obj = store.salesList;
 				console.log("obj", obj);
 				fetch("https://imsapiproject.herokuapp.com/transactions/new/map", {
 					method: "POST",
@@ -169,12 +170,12 @@ const getState = ({ getStore, setStore }) => {
 					},
 					body: JSON.stringify(obj)
 				}).then(() => {
-					setStore({ sales: [] });
+					setStore({ salesList: [] });
 				});
 			},
 			addANewPurchase: (order, scan, quantity, warehouse) => {
 				let store = getStore();
-				let num = store.purchases.length;
+				let num = store.purchasesList.length;
 				let input1 = document.querySelector("#input1");
 				input1.value = "";
 				let input2 = document.querySelector("#input2");
@@ -184,7 +185,7 @@ const getState = ({ getStore, setStore }) => {
 
 				console.log("scan: " + num);
 				setStore({
-					purchases: store.purchases.concat({
+					purchasesList: store.purchasesList.concat({
 						products_id: Number(scan),
 						title: `Item ${num + 1}`,
 						sales_id: null,
@@ -196,7 +197,7 @@ const getState = ({ getStore, setStore }) => {
 			},
 			submitNewPurchases: () => {
 				let store = getStore();
-				let obj = store.purchases;
+				let obj = store.purchasesList;
 				fetch("https://imsapiproject.herokuapp.com/transactions/new/map", {
 					method: "POST",
 					headers: {
@@ -204,7 +205,7 @@ const getState = ({ getStore, setStore }) => {
 					},
 					body: JSON.stringify(obj)
 				}).then(() => {
-					setStore({ purchases: [] });
+					setStore({ purchasesList: [] });
 				});
 			},
 			logout: () => {
