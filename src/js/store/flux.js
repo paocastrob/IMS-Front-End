@@ -170,7 +170,11 @@ const getState = ({ getStore, setStore }) => {
 					},
 					body: JSON.stringify(obj)
 				}).then(() => {
-					setStore({ salesList: [] });
+					fetch("https://imsapiproject.herokuapp.com/products/all")
+						.then(resp => resp.json())
+						.then(products => {
+							setStore({ salesList: [], products });
+						});
 				});
 			},
 			addANewPurchase: (order, scan, quantity, warehouse) => {
@@ -205,7 +209,11 @@ const getState = ({ getStore, setStore }) => {
 					},
 					body: JSON.stringify(obj)
 				}).then(() => {
-					setStore({ purchasesList: [] });
+					fetch("https://imsapiproject.herokuapp.com/products/all")
+						.then(resp => resp.json())
+						.then(products => {
+							setStore({ purchasesList: [], products });
+						});
 				});
 			},
 			logout: () => {
