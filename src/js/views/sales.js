@@ -13,7 +13,7 @@ export class Sales extends React.Component {
 			order: "",
 			scan: "",
 			quantity: "",
-			warehouse: ""
+			warehouse: 1
 		};
 	}
 	componentDidMount() {

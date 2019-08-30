@@ -12,7 +12,7 @@ export class Purchases extends React.Component {
 			order: "",
 			scan: "",
 			quantity: "",
-			warehouse: "'"
+			warehouse: 1
 		};
 	}
 	componentDidMount() {

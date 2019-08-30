@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 const getState = ({ getStore, setStore }) => {
 	return {
 		store: {
+			scanCode: ["", "Chocolate", "Cookie", "Honey", "Milk", "Bread", "Pasta"],
 			products: [],
 			warehouses: [],
 			sales: [],
@@ -153,9 +154,10 @@ const getState = ({ getStore, setStore }) => {
 						products_id: Number(scan),
 						title: `Item ${num + 1}`,
 						purchases_id: null,
-
+						description: getStore().scanCode[Number(scan)],
 						quantity: Number(quantity) * -1,
-						warehouses_id: Number(warehouse)
+						warehouses_id: Number(warehouse),
+						order: order
 					})
 				});
 			},
@@ -193,9 +195,10 @@ const getState = ({ getStore, setStore }) => {
 						products_id: Number(scan),
 						title: `Item ${num + 1}`,
 						sales_id: null,
-
+						description: getStore().scanCode[Number(scan)],
 						quantity: Number(quantity),
-						warehouses_id: Number(warehouse)
+						warehouses_id: Number(warehouse),
+						order: order
 					})
 				});
 			},
