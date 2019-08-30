@@ -116,11 +116,11 @@ export class Sales extends React.Component {
 										return (
 											<tr key={index}>
 												<th scope="row">{index + 1}</th>
-												<td>{item.title}</td>
 												<td>{item.sku}</td>
 												<td>{item.description}</td>
-												<td>@mdo</td>
-												<td>@mdo</td>
+												<td>{item.quantity}</td>
+												<td>08/27/2019</td>
+												<td>{item.order}</td>
 												<td>
 													<i className="far fa-times-circle fa-2x pt-2 pl-1 text-danger" />
 												</td>

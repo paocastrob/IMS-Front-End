@@ -14,6 +14,9 @@ export class Purchases extends React.Component {
 			quantity: ""
 		};
 	}
+	componentDidMount() {
+		this.nameInput.focus();
+	}
 	render() {
 		return (
 			<div className="row">
@@ -32,6 +35,9 @@ export class Purchases extends React.Component {
 									<div className="row">
 										<div className="col-3">
 											<input
+												ref={input => {
+													this.nameInput = input;
+												}}
 												id="input1"
 												placeholder="Enter order number:"
 												className="mb-2 border w-100"
